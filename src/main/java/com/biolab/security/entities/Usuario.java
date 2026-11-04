@@ -7,15 +7,16 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.util.UUID;
 
-@Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter @Setter
+@Entity
 public class Usuario {
-    @Id @GeneratedValue(strategy = GenerationType.UUID)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String nome;
     @Email
@@ -24,5 +25,7 @@ public class Usuario {
     private String senha;
     @Enumerated(EnumType.STRING)
     private Role role;
+    @Size(min = 11, max =11)
+    private String cpf;
 
 }

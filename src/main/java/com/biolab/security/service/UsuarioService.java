@@ -20,6 +20,7 @@ public class UsuarioService {
         Usuario u = new Usuario();
         u.setNome(dto.getNome());
         u.setEmail(dto.getEmail());
+        u.setCpf(dto.getCpf());
         u.setSenha(passwordEncoder.encode(dto.getSenha()));
         u.setRole(dto.getRole());
         usuarioRepository.save(u);
